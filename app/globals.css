@@ -17,7 +17,6 @@
 }
 
 .list-item p {
-  color: grey;
   margin : 5px 0px;
 } 
 a {
@@ -78,6 +77,13 @@ a {
 .content {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #455;
   line-height: 1.5;
 }
+.list_author {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color:#C0C000;
+  line-height: 1.5;
+}
+

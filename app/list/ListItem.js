@@ -12,16 +12,22 @@ export default function ListItem(props){
                     <span onClick={(e)=>{
                         fetch('/api/post/delete', {method : 'POST', body : a._id})
                         .then((r)=>{
+                            if(r.status==200){
+                                // console.log("successfully deleted")
+                                e.target.parentElement.style.opacity = 0;
+                                setTimeout(()=>{
+                                    e.target.parentElement.style.display = 'none'
+                                },1000)
+                                
+                            }
+                            else{
+                                // console.log("failed")
+                            }
                             return r.json()
                         })
-                        .then(()=>{
-                            e.target.parentElement.style.opacity = 0;
-                            setTimeout(()=>{
-                                e.target.parentElement.style.display = 'none'
-                            },1000)
-                        })
                     }}>🗑️</span>
-                <p>{a.content}</p>
+                    <p className="content">{a.content}</p>
+                    <p className="list_author">{a.author? a.author: 'Unknown Author'}</p>
                 </div>
                 ))
             }
