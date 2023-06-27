@@ -1,5 +1,4 @@
 import { connectDB } from "@/util/database.js"
-import Link from "next/link"
 import ListItem from "./ListItem"
 
 export default async function List() {
